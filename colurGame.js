@@ -1,12 +1,5 @@
 // making a list of colours
-let colours = [
-	'rgb(255, 0, 0)',
-	'rgb(255, 255, 0)',
-	'rgb(255, 0, 255)',
-	'rgb(0, 255, 0)',
-	'rgb(0, 0, 255)',
-	'rgb(0 , 255, 255)'
-];
+let colours = generateRandomColours(6)
 
 let squares = document.querySelectorAll('.squares');
 let message = document.querySelector('#message');
@@ -32,7 +25,7 @@ for (let i = 0; i < squares.length; i++) {
 
 //we want to pick a color as goal
 
-let pickedColour = colours[3];
+let pickedColour = colourPicker();
 
 let shownColour = document.querySelector('h2');
 
@@ -46,4 +39,35 @@ function changeColour(colour) {
         //change each colour to match winning colour
         squares[i].style.backgroundColor = colour;
     }
+}
+
+// picking the random colour
+function colourPicker() {
+    let randomNum = Math.floor(Math.random() * colours.length);
+    return colours[randomNum];
+}
+
+
+//geneating random colours
+
+function generateRandomColours(num) {
+    //make an array
+    let arr = [];
+    //repeat num times
+    for (let i = 0; i < num; i++){
+        //get random colour and push to array
+        arr.push(randomColour());
+    }
+    //return array
+    return arr;
+}
+
+function randomColour() {
+    //pick a "red" from 0 - 255
+    let R = Math.floor(Math.random() * 256);
+    //pick a "green" from 0 - 255
+    let G = Math.floor(Math.random() * 256);
+    //pick a "blue" from 0 - 255
+    let B = Math.floor(Math.random() * 256);
+    return `rgb(${R}, ${G}, ${B})`;
 }
