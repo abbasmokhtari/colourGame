@@ -3,6 +3,7 @@ let colours = generateRandomColours(6)
 
 let squares = document.querySelectorAll('.squares');
 let message = document.querySelector('#message');
+let h1 = document.querySelector('h1');
 
 for (let i = 0; i < squares.length; i++) {
 	//assign colour to each square
@@ -16,6 +17,7 @@ for (let i = 0; i < squares.length; i++) {
         if (clickedColour === pickedColour) {
             message.textContent = 'Correct';
             changeColour(clickedColour);
+            h1.style.backgroundColor = clickedColour;
         } else {
             this.style.backgroundColor = '#232323';
             message.textContent = 'Try agian';
