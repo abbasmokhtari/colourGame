@@ -25,3 +25,9 @@ h2 {
     color: rgb(196, 196, 248);
     text-align: center;
 }
+
+.menu {
+    color: white;
+    display: flex;
+    justify-content: center;
+}

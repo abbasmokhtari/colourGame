@@ -9,6 +9,7 @@ let colours = [
 ];
 
 let squares = document.querySelectorAll('.squares');
+let message = document.querySelector('#message');
 
 for (let i = 0; i < squares.length; i++) {
 	//assign colour to each square
@@ -20,9 +21,11 @@ for (let i = 0; i < squares.length; i++) {
         let clickedColour = this.style.backgroundColor;
         //compare colour to picked colour
         if (clickedColour === pickedColour) {
-            alert('correct');
+            message.textContent = 'Correct';
+            changeColour(clickedColour);
         } else {
-            alert('wrong');
+            this.style.backgroundColor = '#232323';
+            message.textContent = 'Try agian';
         }
 	});
 }
@@ -34,3 +37,13 @@ let pickedColour = colours[3];
 let shownColour = document.querySelector('h2');
 
 shownColour.textContent = pickedColour.toUpperCase();
+
+//change every block colour to winning
+
+function changeColour(colour) {
+    //loop through all squares
+    for (let i = 0; i < squares.length; i++){
+        //change each colour to match winning colour
+        squares[i].style.backgroundColor = colour;
+    }
+}
