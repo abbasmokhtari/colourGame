@@ -27,7 +27,21 @@ h2 {
 }
 
 .menu {
-    color: white;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    background-color: white;
+    padding: 1px;
+    height: 20px;
 }
+
+#message {
+    color: rgb(1, 85, 85);
+    text-align: center;
+}
+
+header, h1, h2{
+    margin:0;
+    padding: 10px 0;
+
+}
+
