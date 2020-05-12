@@ -6,9 +6,9 @@ let message = document.querySelector('#message');
 let header = document.querySelector('header');
 
 for (let i = 0; i < squares.length; i++) {
-	//assign colour to each square
+    //assign colour to each square
 	squares[i].style.backgroundColor = colours[i];
-
+    
 	//write an event which picks the colour of the selected box
 	squares[i].addEventListener('click', function() {
         // grab colour of the picked square
@@ -73,3 +73,20 @@ function randomColour() {
     let B = Math.floor(Math.random() * 256);
     return `rgb(${R}, ${G}, ${B})`;
 }
+
+//reset button
+let reset = document.querySelector('#reset');
+
+reset.addEventListener('click', function () {
+    //generate all new colours
+    colours = generateRandomColours(6)
+    //pick new random colour
+    pickedColour = colourPicker();
+    //change display colour to match new colour
+    shownColour.textContent = pickedColour.toUpperCase();
+    //change the colour of the squares
+    for (let i = 0; i < squares.length; i++){
+        squares[i].style.backgroundColor = colours[i];
+    }
+    header.style.backgroundColor = '#232323';
+})
