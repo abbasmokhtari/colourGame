@@ -1,5 +1,6 @@
 body {
     background-color: #232323;
+    margin: 0;
 }
 
 #container {
@@ -7,6 +8,7 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     width: 60vw;
     margin: 0 auto;
+    padding-top: 30px;
 }
 
 .squares {
@@ -22,7 +24,7 @@ h1 {
 }
 
 h2 {
-    color: rgb(196, 196, 248);
+    color: rgb(243, 248, 196);
     text-align: center;
 }
 
@@ -39,12 +41,24 @@ h2 {
     text-align: center;
 }
 
-header, h1, h2{
+header {
     margin:0;
     padding: 10px 0;
+    background-color: rgb(32, 93, 121);
 
 }
 
 .selected {
     background-color: rgb(83, 83, 248);
+}
+
+button {
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 700;
+    color: rgb(32, 93, 121);
+    letter-spacing: 1px;
+    font-size: inherit;
 }

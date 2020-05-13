@@ -89,7 +89,7 @@ reset.addEventListener('click', function() {
 	for (let i = 0; i < squares.length; i++) {
 		squares[i].style.backgroundColor = colours[i];
 	}
-	header.style.backgroundColor = '#232323';
+	header.style.backgroundColor = 'rgb(32, 93, 121)';
 	reset.textContent = 'New Colours';
 	message.textContent = '';
 });
