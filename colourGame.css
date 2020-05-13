@@ -45,3 +45,6 @@ header, h1, h2{
 
 }
 
+.selected {
+    background-color: rgb(83, 83, 248);
+}

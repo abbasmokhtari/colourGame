@@ -18,6 +18,7 @@ for (let i = 0; i < squares.length; i++) {
             message.textContent = 'Correct';
             changeColour(clickedColour);
             header.style.backgroundColor = clickedColour;
+            reset.textContent = 'Play Again'
         } else {
             this.style.backgroundColor = '#232323';
             message.textContent = 'Try agian';
@@ -89,4 +90,21 @@ reset.addEventListener('click', function () {
         squares[i].style.backgroundColor = colours[i];
     }
     header.style.backgroundColor = '#232323';
+    reset.textContent = 'New Colours';
+    message.textContent = '';
+})
+
+//hard and easy button
+
+let easyBtn = document.querySelector('#easyBtn');
+let hardBtn = document.querySelector('#hardBtn');
+
+easyBtn.addEventListener('click', function () {
+    easyBtn.classList.add('selected');
+    hardBtn.classList.remove('selected');
+})
+
+hardBtn.addEventListener('click', function () {
+    easyBtn.classList.remove('selected');
+    hardBtn.classList.add('selected');
 })
